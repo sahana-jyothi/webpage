@@ -1,13 +1,506 @@
-<html>
-  <head>
-    <link rel="stylesheet" href="style.css"/>
-  </head>
-  <body style="background-color:rgba(226, 12, 204, 0.778)">
-    <h1 class="h1tag">Hi! I am sahana</h1>
-    <p  class="h1tag">I am BETECH student in JIT davangere</p>
-    <p  class="h1tag">I want to become software develpoer </p>
-     <a href="https://github.com/sahana-jyothi/webpage">this is a link</a>
-     <br/>
-     <a href="index3.html">this bio data</a>
-  </body>
-</html>  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sahana v j</title> - Developer Portfolio</title>
+    <meta name="description" content="sahana v j"- BTech Student & Aspiring Developer from Davangere, Karnataka">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: hsl(240, 10%, 3.9%);
+            --text-primary: hsl(0, 0%, 98%);
+            --text-muted: hsl(240, 5%, 64.9%);
+            --card-bg: hsl(240, 10%, 8%);
+            --border: hsl(240, 10%, 20%);
+            --primary: hsl(133, 84%, 46%);
+            --primary-glow: hsl(96, 85%, 38%);
+            --secondary: hsl(125, 100%, 50%);
+            --accent: hsl(106, 86%, 35%);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            padding: 5rem 1.5rem;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            opacity: 0.1;
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        .blob-1 {
+            top: 5rem;
+            left: 5%;
+            width: 300px;
+            height: 300px;
+            background: var(--primary);
+            opacity: 0.2;
+        }
+
+        .blob-2 {
+            bottom: 5rem;
+            right: 5%;
+            width: 400px;
+            height: 400px;
+            background: var(--accent);
+            opacity: 0.2;
+            animation-delay: 1s;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.2;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.3;
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 0 40px hsla(280, 100%, 60%, 0.3);
+        }
+
+        .sparkle {
+            color: var(--primary);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 2rem;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: hsla(200, 100%, 50%, 0.2);
+            border: 1px solid hsla(200, 100%, 50%, 0.5);
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .tag:nth-child(2) {
+            background: hsla(310, 100%, 55%, 0.2);
+            border-color: hsla(310, 100%, 55%, 0.5);
+        }
+
+        .tag:hover {
+            transform: scale(1.05);
+            background: hsla(200, 100%, 50%, 0.3);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 4rem 1.5rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Card Styles */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 40px hsla(280, 100%, 60%, 0.3);
+        }
+
+        .education-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: start;
+        }
+
+        .icon-box {
+            padding: 0.75rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .icon-box svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: white;
+        }
+
+        .education-content h3 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-location {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .education-desc {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .skill-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            animation: fadeIn 0.6s ease-out backwards;
+        }
+
+        .skill-card:nth-child(1) { animation-delay: 0.1s; }
+        .skill-card:nth-child(2) { animation-delay: 0.2s; }
+        .skill-card:nth-child(3) { animation-delay: 0.3s; }
+        .skill-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .skill-icon {
+            font-size: 2.5rem;
+        }
+
+        .skill-info {
+            flex: 1;
+        }
+
+        .skill-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-progress {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .progress-bar {
+            flex: 1;
+            height: 0.5rem;
+            background: var(--border);
+            border-radius: 9999px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 9999px;
+            transition: width 1s ease-out;
+        }
+
+        .skill-level {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+
+        /* Alternate Section Background */
+        .alt-bg {
+            background: hsla(240, 10%, 15%, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 1.5rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.25rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .education-card {
+                flex-direction: column;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        
+        <div class="hero-content">
+            <div class="badge">
+                <span class="sparkle">✨</span>
+                <span>Open to Opportunities</span>
+            </div>
+            
+            <h1>Hi, I'm Sahana v j </h1>
+            
+            <p class="subtitle">
+                BTech Student & Aspiring Developer from Davangere, Karnataka
+            </p>
+            
+            <div class="tags">
+                <div class="tag">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                    Developer
+                </div>
+                <div class="tag">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                        <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                    </svg>
+                    Student
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Education & Experience</h2>
+            
+            <div class="card education-card">
+                <div class="icon-box">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                        <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                    </svg>
+                </div>
+                <div class="education-content">
+                    <h3>Bachelor of Technology (BTech)</h3>
+                    <p class="education-location">Davangere, Karnataka</p>
+                    <p class="education-desc">
+                        Currently pursuing my Bachelor's degree in Technology, building strong foundations 
+                        in computer science and software development. Actively learning and working on 
+                        projects to enhance my programming skills.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="alt-bg">
+        <div class="container">
+            <h2 class="section-title">Skills & Technologies</h2>
+            
+            <div class="skills-grid">
+                <div class="card skill-card">
+                    <div class="skill-icon">💻</div>
+                    <div class="skill-info">
+                        <div class="skill-name">C Programming</div>
+                        <div class="skill-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="60" style="width: 0%"></div>
+                            </div>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card skill-card">
+                    <div class="skill-icon">🧩</div>
+                    <div class="skill-info">
+                        <div class="skill-name">Problem Solving</div>
+                        <div class="skill-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="40" style="width: 0%"></div>
+                            </div>
+                            <span class="skill-level">Developing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card skill-card">
+                    <div class="skill-icon">📊</div>
+                    <div class="skill-info">
+                        <div class="skill-name">Data Structures</div>
+                        <div class="skill-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="40" style="width: 0%"></div>
+                            </div>
+                            <span class="skill-level">Learning</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card skill-card">
+                    <div class="skill-icon">🔄</div>
+                    <div class="skill-info">
+                        <div class="skill-name">Algorithms</div>
+                        <div class="skill-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="40" style="width: 0%"></div>
+                            </div>
+                            <span class="skill-level">Learning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Built with passion and dedication • Ready to learn and grow</p>
+        </div>
+    </footer>
+
+    <script>
+        // Animate skill progress bars on page load
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const progressBars = document.querySelectorAll('.progress-fill');
+                progressBars.forEach(function(bar) {
+                    const width = bar.getAttribute('data-width');
+                    bar.style.width = width + '%';
+                });
+            }, 500);
+        });
+
+        // Smooth scroll for any future navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
