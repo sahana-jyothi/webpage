@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Happy Birthday!</title>
+    <title>Happy Birthday !</title>
     <style>
       body {
         margin: 0;
@@ -50,6 +50,23 @@
           opacity: 1;
         }
       }
+
+      /* Music button styling */
+      .music-btn {
+        margin-top: 40px;
+        background: #ff6b81;
+        color: #fff;
+        border: none;
+        padding: 15px 25px;
+        font-size: 1.2rem;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .music-btn:hover {
+        background: #ff4757;
+      }
+
       footer {
         margin-top: 80px;
         font-size: 1rem;
@@ -58,7 +75,7 @@
     </style>
   </head>
   <body>
-    <h1>🎂 Happy Birthday dear sister Batman! 🎉</h1>
+    <h1>🎂 Happy Birthday ! 🎉</h1>
 
     <p>
       Wishing you a year filled with joy, laughter, love, and endless happiness.
@@ -67,9 +84,24 @@
 
     <div class="balloons">🎈🎈🎈</div>
 
+    <!-- Music Button -->
+    <button class="music-btn" onclick="playMusic()">▶ Play</button>
+
+    <!-- Hidden audio element -->
+    <audio id="bg-music">
+      <source src="./music/happy_birthday.mp3" type="audio/mp3" />
+    </audio>
+
     <footer>
       Made with ❤️ for Batman<br />
       By Sahana V Jyothi
     </footer>
+
+    <script>
+      function playMusic() {
+        const audio = document.getElementById("bg-music");
+        audio.play();
+      }
+    </script>
   </body>
 </html>
