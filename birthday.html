@@ -1,108 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Happy Birthday Diii !</title>
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-        font-family: "Poppins", sans-serif;
-        text-align: center;
-        color: #fff;
-      }
-      h1 {
-        font-size: 3rem;
-        margin-top: 80px;
-        animation: fadeIn 2s ease-in-out;
-      }
-      p {
-        font-size: 1.3rem;
-        margin-top: 20px;
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-        animation: fadeIn 3s ease-in-out;
-      }
-      .balloons {
-        font-size: 4rem;
-        margin-top: 40px;
-        animation: float 3s ease-in-out infinite;
-      }
-      @keyframes float {
-        0% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-20px);
-        }
-        100% {
-          transform: translateY(0);
-        }
-      }
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday diii!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #a558ba, #fad0c4);
+      font-family: "Poppins", sans-serif;
+      text-align: center;
+      color: #fff;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-top: 80px;
+      animation: fadeIn 2s ease-in-out;
+    }
+{
+      font-size: 1.3rem;
+      margin-top: 20px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    .balloons {
+      font-size: 4rem;
+      margin-top: 40px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0);
       }
 
-      /* Music button styling */
-      .music-btn {
-        margin-top: 40px;
-        background: #ff6b81;
-        color: #fff;
-        border: none;
-        padding: 15px 25px;
-        font-size: 1.2rem;
-        border-radius: 10px;
-        cursor: pointer;
-        transition: 0.3s;
-      }
-      .music-btn:hover {
-        background: #ff4757;
+      50% {
+        transform: translateY(-20px);
       }
 
-      footer {
-        margin-top: 80px;
-        font-size: 1rem;
-        opacity: 0.8;
+      100% {
+        transform: translateY(0);
       }
-    </style>
-  </head>
-  <body>
-    <h1>🎂 Happy Birthday Diii! 🎉</h1>
+    }
 
-    <p>
-      Wishing you a year filled with joy, laughter, love, and endless happiness.
-      You are a blessing, and may all your dreams come true! 💖
-    </p>
-
-    <div class="balloons">🎈🎈🎈</div>
-
-    <!-- Music Button -->
-    <button class="music-btn" onclick="playMusic()">▶ Play</button>
-
-    <!-- Hidden audio element -->
-    <audio id="bg-music">
-          <source src="happy-birthday-357371 (1).mp3" type="audio/mp3" />
-
-    </audio>
-
-    <footer>
-      Made with ❤️ for diii<br />
-      By sonniii
-    </footer>
-
-    <script>
-      function playMusic() {
-        const audio = document.getElementById("bg-music");
-        audio.play();
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
       }
-    </script>
-  </body>
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Music button styling */
+    .music-btn {
+      margin-top: 40px;
+      background: #ff6b81;
+      color: #fff;
+      border: none;
+      padding: 15px 25px;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .music-btn:hover {
+      background: #c511b6;
+    }
+
+    footer {
+      margin-top: 80px;
+      font-size: 1rem opacity: 0.8;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>🎂 Happy Birthday Diii! 🎉</h1>
+
+  <p>
+    Wishing you a year filled with joy, laughter, love, and endless happiness.
+    You are a blessing, and may all your dreams come true!💖 love you sooo much!!
+  </p>
+
+  <div class="balloons">🎈🎈🎈</div>
+  <button class="music-btn" onclick="playMusic()">▶ Play</button>
+
+  <!-- Hidden audio element -->
+  <audio id="bg-music">
+    <source src="happy-birthday-357371 (1).mp3" type="audio/mp3" />
+  </audio>
+
+
+  <footer>
+    Made with ❤️ for Diii <br />
+    By sonii
+  </footer>
+
+  <script>
+    function playMusic() {
+      const audio = document.getElementById("bg-music");
+      audio.play();
+    }
+  </script>
+</body>
+
 </html>
