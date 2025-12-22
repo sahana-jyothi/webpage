@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Quote of the Day</title>
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fcfcfd;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .quote-box {
+      background: #ffffff;
+      padding: 24px 32px;
+      border-radius: 14px;
+      max-width: 520px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .quote-box:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .quote {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #111827;
+      margin-top: 12px;
+    }
+
+    .search-box {
+      width: 400px;
+      padding: 14px 22px;
+      border-radius: 30px;
+      border: 1px solid #d1d5db;
+      font-size: 15px;
+      outline: none;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    }
+
+    .search-box:focus {
+      border-color: #6366f1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="quote-box" id="quoteBoxId">
+    <h2>Quote of the Day</h2>
+    <p class="quote" id="quoteText"></p>
+    <img src="./images/rohit-saraf (1).jpg" height="100" width="100"  onclick="showRandomQuote();" />
+  </div>
+
+  <input
+    type="text"
+    id="searchInput"
+    class="search-box"
+    placeholder="Search quotes and press Enter..."
+  />
+
+  <script>
+    const quotes = [
+      "Small steps every day lead to big changes.",
+      "Believe in your progress, even when it’s slow.",
+      "Consistency beats motivation.",
+      "Your future needs your effort today.",
+      "Do it with passion or not at all.",
+      "Every line of code is a step forward.",
+      "Growth begins where comfort ends."
+    ];
+
+    const quoteText = document.getElementById("quoteText");
+    const searchInput = document.getElementById("searchInput");
+    const quoteBoxId = document.getElementById("quoteBoxId");
+    quoteBoxId.style.display = "none";
+
+
+    // 🔁 Random quote on every refresh
+    function showRandomQuote() {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      quoteText.textContent = quotes[randomIndex];
+    }
+
+    showRandomQuote();
+
+    // 🔍 Search and show quote on Enter
+    searchInput.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        const value = searchInput.value.toLowerCase();
+        if(value === "quote"){
+          quoteBoxId.style.display = "block";
+        }
+        
+        // const foundQuote = quotes.find(q =>
+        //   q.toLowerCase().includes(value)
+        // );
+
+        quoteText.textContent = foundQuote
+          ? foundQuote
+          : "No matching quote found.";
+      }
+    });
+
+
+  </script>
+
+</body>
+</html>
