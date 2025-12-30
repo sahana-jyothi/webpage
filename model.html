@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sensor Based Dustbin Animation</title>
+  <link rel="stylesheet" href="model.css">
+</head>
+<body>
+
+<h2>Sensor-Based Dustbin – Person Detection Demo</h2>
+
+<div class="scene">
+
+  <!-- Person -->
+  <div class="person" id="person">🚶‍♂️</div>
+
+  <!-- Dustbin -->
+  <div class="dustbin-container">
+
+    <!-- Sensor -->
+    <div class="sensor">
+      <div class="sensor-eye"></div>
+      <div class="wave"></div>
+    </div>
+
+    <div class="lid" id="lid"></div>
+
+    <div class="dustbin">
+      <div class="waste" id="waste"></div>
+    </div>
+
+  </div>
+</div>
+
+<p id="status">Person is far away...</p>
+
+<!-- Background alert audio -->
+<audio id="alertSound" src="pri/censor-beep-1-372459.mp3"></audio>
+
+<script src="model.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #e8f5e9;
+  text-align: center;
+}
+
+.scene {
+  position: relative;
+  width: 700px;
+  height: 300px;
+  margin: auto;
+}
+
+/* Person starts on RIGHT */
+.person {
+  position: absolute;
+  right: 0;
+  bottom: 40px;
+  font-size: 50px;
+  transition: right 4s linear;
+}
+
+/* Dustbin */
+.dustbin-container {
+  position: absolute;
+  left: 100px;
+  bottom: 0;
+  width: 180px;
+}
+
+/* Sensor */
+.sensor {
+  position: relative;
+  width: 50px;
+  height: 25px;
+  background: #555;
+  border-radius: 5px;
+  margin-bottom: 8px;
+}
+
+.sensor-eye {
+  width: 10px;
+  height: 10px;
+  background: #00e676;
+  border-radius: 50%;
+  position: absolute;
+  top: 7px;
+  left: 8px;
+}
+
+.wave {
+  position: absolute;
+  right: -12px;
+  top: 4px;
+  width: 20px;
+  height: 15px;
+  border-right: 2px solid #00e676;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+/* Lid */
+.lid {
+  width: 180px;
+  height: 25px;
+  background: #2e7d32;
+  border-radius: 10px;
+  transition: transform 0.5s;
+}
+
+/* Dustbin body */
+.dustbin {
+  width: 180px;
+  height: 220px;
+  background: #4caf50;
+  border-radius: 0 0 20px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.waste {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  background: #6d4c41;
+  transition: height 1s;
+}
+
+#status {
+  margin-top: 20px;
+  font-weight: bold;
+}
