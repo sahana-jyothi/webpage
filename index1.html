@@ -1,0 +1,815 @@
+<html lang="en">
+        <head>
+            <meta charset="UTF-8">
+           <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Jain Institute of Technology, Davangere</title>
+            <style>
+                *{
+                    margin:0;
+                    padding:0;
+                    box-sizing: border-box;
+                }
+                body,html{
+                    height: 100%;
+                    font-family: 'segoe UI',sans-serif;
+                    color: white;
+                    overflow-x: hidden;
+                    scroll-behavior: smooth;
+                }
+                body{
+                    position: relative;
+                    background: #b19cd9;
+                    margin: 0;
+                    font-family: Arial, Helvetica, sans-serif;
+                    background: linear-gradient(135deg,#f9c1d9,#e6c8f5,#d1b2ff);                    color:white;
+                }
+                .blob{
+                    position: absolute;
+                    width: 300px;
+                    height:300px;
+                    background: linear-gradient(135deg,#b19cd9,#d8bfd8,#ffb6c1);
+                    border-radius: 50%;
+                    filter: blur(80px);
+                    opacity: 0.6;
+                    animation: moveBlob 20s infinite alternate ease-in-out;
+                }
+                .blob:nth-child(1){
+                    top:10%;
+                    left: 15%;
+                    animation-duration:25s ;
+                }
+                .blob:nth-child(2){
+                    top:50%;
+                    left:70%;
+                    animation-duration: 30s;
+                }
+                .blob:nth-child(3){
+                    top:70%;
+                    left:30%;
+                    animation-duration: 28s;
+                }
+                @keyframes moveBlob{
+                    0%{transform: translate(0,0) scale(); border-radius: 50%; }
+                    25%{transform: translate(50px, -30px) scale(1.1); border-radius:45% 55% 55% 45%; }  
+                    50%{transform: translate(-40px,40px) scale(0.9); border-radius:50% 50% 40% 60%; }
+                    75%{transform: translate(30px,-50px) scale(1.05); border-radius:55% 45% 60% 40%; } 
+                    100%{transform: translate(0,0) scale(1);border-radius: 50%;}
+                }
+                .bubble {
+                    position: absolute;
+                    bottom: -50px;
+                    border-radius: 50%;
+                    background: rgba(255,255,255,0.1);
+                    animation: floatUp linear infinite ;
+                }
+                @keyframes floatUp{
+                    0% { transform: translateY(0) scale(1); opacity : 0.2; }
+                    50% { opacity: 0.5; }
+                    100% { transform: translateY(-120vh) scale(1.2); opacity: 0; }
+                }
+                .top-section{
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    padding: 50px 10%;
+                    min-height: 30vh;
+                    z-index: 2;
+                }
+                .top-section a img.logo{
+                    width: 140px;
+                    height: 140px;
+                    cursor: pointer;
+                    transition: transform 0.3s ease,box-shadow 0.3s ease;
+                }
+                .top-section a img.logo:hover{
+                    transform: scale(1.1);
+                    box-shadow: 0 0 25px rgba(255,255,255,0.5);
+                }
+                .top-section h1{
+                    margin-left: 30px;
+                    font-size: 3rem;
+                    font-weight: bold;
+                    text-shadow: 0 0 15px rgba(255,255,255,0.4);
+                    transition: text-shadow 0.3s ease;
+                }
+                .logo-row{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    gap: 30px;
+                    margin-top: 100px;
+                    padding: 15px 5%;
+                    z-index: 2;
+                    position: relative;
+                }
+                .logo-row img{
+                    width: 100px;
+                    height: 100px;
+                    object-fit: contain;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    cursor: pointer;
+                }
+                .event-section{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    justify-content: center;
+                    gap: 10px;
+                }
+                .date-pill{
+                    display: inline-block;
+                    padding:12px 30px;
+                    border-radius: 40px;
+                    background:linear-gradient(90deg,#a100ff,#3b82f6);
+                    color: white;
+                    border:1px solid rgba(150,150,255,0.4);
+                    font-weight: 600;
+                    margin-top:40px;
+                    margin-bottom: 20px;
+                    box-shadow: 0 5px 15px rgba(100,0,255,0.4);
+                }
+                .event-logo{
+                    display: block;
+                    width: 520px;
+                    max-width: 90%;
+                    height: auto; 
+                    margin-bottom: auto 20px ;
+                    filter:drop-shadow(0 0 12px rgba(255,255,25,0.35));                
+                }
+                .event-title{
+                    font-size: 60px;
+                    font-weight: 80px;
+                    line-height: 1.1;
+                    background: linear-gradient(
+                        90deg,
+                        #6a8cff,
+                        #9b5cff,
+                        #ff6ec7,
+                        #6a8cff,
+                    );
+                    background-size: 300% 300%;
+                    -webkit-background-clip:text;
+                    color:transparent;
+                    animation: gradientMove 6s ease infinite;
+                }
+                .event-title span{
+                    color:white;
+                }
+                @keyframes gradientMove{
+                    0%{
+                        background-position: 0% 50%;
+                    }
+                    50%{
+                        background-position: 100% 50%;
+                    }
+                    100%{
+                        background-position: 0% 50%;
+                    }
+                }
+               .event-desc{
+    max-width:650px;
+    margin:25px auto;
+    font-size:18px;
+    line-height:1.7;
+    color:#1c1c1c;
+    text-align:center;
+    background: rgba(255,255,255,0.35);
+    padding:20px 25px;
+    border-radius:15px;
+    backdrop-filter: blur(8px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+.event-desc{
+    animation: fadeUp 1.2s ease;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+@keyframes neonMove{
+    0%{
+        background-position:0% 50%;
+    }
+    50%{
+        background-position:100% 50%;
+    }
+    100%{
+        background-position:0% 50%;
+    }
+}
+    
+                .event-row{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    padding:40px 10%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+                .event-buttons{
+                    margin-top: 40px;
+                }
+                .register-btn{
+                    display: inline-block;
+                    padding: 12px 30px;
+                    margin:5px 0;
+                    border-radius: 40px;
+                    background: linear-gradient(90deg,#a100ff,#3b82f6);
+                    text-decoration: none;
+                    color: white;
+                    font-weight: 600;
+                    font: size 16px;
+                    transition: 0.3s;
+                }
+                .register-btn:hover{
+                    transform: translateY(-3px);
+                    box-shadow: 0 10px,30px rgba(100,0,255,0.6);
+                }
+                @media (max-width:768px){
+                    .top-section{
+                        flex-direction: column;
+                        text-align: center;
+                    }
+                    .top-section h1{
+                        margin-left: 0;
+                        margin-top: 20px;
+                    }
+                    .logo-row img {
+                        width: 120px;
+                        height: 120px;
+                        object-fit: contain;
+                        display:block;
+                    }
+                    .event-title{
+                        font-size: 40px;
+                    }
+                }
+                .page-title{
+                    text-align: center;
+                    font-size: 48px;
+                    margin-top: 40px;
+                    color: black;
+                    font-weight: bold;
+                    animation: fadeDown 1s ease;
+                }
+                .event-card{
+                   width: 320px;
+                    background: linear-gradient(135deg,#4f46e5,#3b82f6);
+                    border-radius: 25px;
+                    padding: 30px 20px;
+                    text-align: center;
+                    display:flex;
+                    flex-direction: column;
+                    align-items:center;
+                    color: white;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+                    transition: 0.3s;
+                }
+                .event-card img{
+                   width: 80px;
+                   height:80px;
+                   object-fit:contain;
+                   display: block;
+                   margin:0 auto 12px auto;
+               }
+                 .event-card:hover{
+                    transform: translateY(-8px)scale(1.02) ;
+                    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+                 }
+ .card{
+    position: relative;
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(12px);
+    border-radius: 25px;
+    padding: 40px 50px;
+    margin-top: 25px;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+.card:hover{
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 
+        0 0 25px rgba(155,92,255,0.7),
+        0 0 50px rgba(106,140,255,0.6),
+        0 20px 45px rgba(0,0,0,0.35);
+}
+
+.card:hover::before{
+    opacity:1;
+}
+.card::before{
+    content:"";
+    position:absolute;
+    inset:-3px;
+    border-radius:25px;
+    background: linear-gradient(
+        45deg,
+        #6a8cff,
+        #9b5cff,
+        #ff6ec7,
+        #00f7ff,
+        #6a8cff
+    );
+    background-size:300% 300%;
+    filter: blur(12px);
+    opacity:0;
+    transition:0.4s;
+    z-index:-1;
+    animation: neonMove 6s linear infinite;
+}
+
+             
+                
+                 .event-name{
+                    font-size: 1.3rem;
+                    font-weight: bold;
+                    margin-bottom: 12px;
+                 }
+                 .event-info{
+                    font-size: 0.9rem;
+                    color: #e6e6e6;
+                    margin: 2px 0;
+                 }
+                 .rules-btn{
+                    margin-top: 10px;
+                    padding: 8px 18px;
+                    border: none;
+                    border-radius: 10px;
+                    background:whitesmoke;
+                    color:#1c1c1c;
+                    font-weight: bold;
+                    cursor: pointer;
+                    transition: 0.3s;
+                 }
+                    .rules-btn:hover{
+    background:#ffd6fa;
+    transform:scale(1.05);
+}
+                 
+                 .popup{
+                    display: none;
+                    position: fixed;
+                    top:0;
+                    left:0;
+                    width: 100%;
+                    height:100%;
+                    background: rgba(0,0,0,0.6);
+                    justify-content: center;
+                    align-items:center;
+                 }
+                 .popup-content{
+                    background: #1c1c1c;
+                    padding: 40px;
+                    border-radius: 20px;
+                    width: 350px;
+                    text-align: center;
+                    animation:popupOpen 0.3s ease;
+                    position: relative;
+                 }
+                .close-butn{
+                    position: absolute;
+                    top: 10px;
+                    right: 15px;
+                    font-size: 22px;
+                    cursor: pointer;                 
+                }
+                @keyframes fadeDown{
+                    from{
+                        opacity:0;
+                        transform:translateY(-20px);
+                    }
+                    to{
+                        opacity:1;
+                        transform: translateY(0);
+                    }
+                }
+                @keyframes popupOpen{
+                    from{
+                        transform: scale(0.8);
+                        opacity: 0;
+                    }
+                    to{
+                        transform: scale(1);
+                        opacity:1;
+                    }
+                }
+                @media (max-width:768px){
+                    .event-card{
+                        width: 380px;
+                    }
+                    .page-title{
+                        font-size: 36px;
+                    }
+                }
+            </style>
+        </head>
+    <body>
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="top-section">
+            <a href="https://www.jitd.ac.in/">
+                <img src="/images/JGi.png" alt="Jain Institute of Technology,Davangere" class="logo">
+            </a>
+            <h1>Jain Institute of Technology, Davangere</h1>    
+        </div>
+        <div class="logo-row">
+            <img src="/images/NBA.png" alt="logo 1">
+            <img src="/images/ISTE.png" alt="logo 2">
+            <img src="/images/UGC.png" alt="logo 3">
+            <img src="/images/iiclogo-1.png" alt="logo 4">
+            <img src="/images/img13.jpg" alt="logo 5">
+            <img src="/images/IEEE.png" alt="logo 6">
+        </div>
+        <section class="event-section">
+            <div class="date-pill">
+                MARCH 25, 2026</div>
+            <div class="card" onclick="openPopup('EMERGE')">
+            <img src="/images/rbg.png" alt="event-logo"  class="event-logo">
+            <h1 class="event-title">
+                EMERGE  </h1>
+                <span class="emerge-text">EMERGE</span> <br>
+                <span class="year-text">2026</span>
+           
+           <p class="event-desc">
+EMERGE 2026 is a platform for young engineers to showcase innovation,
+creativity, and technical excellence. The event brings together students
+to explore new ideas, collaborate with peers, and demonstrate their
+problem-solving skills through exciting technical challenges and activities.
+</p>
+        </div>
+            <div class="event-buttons">
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSc0HXr3qCCbC9QzHn_N12XlVTm_iwWpJDotu6ZY0HqZ7hJJFw/viewform?usp=preview"
+target="_blank"
+class="register-btn">
+Register Now
+</a>
+</div>        
+        </section>
+        
+        <h1 class="page-title" id="event-details">Event Details</h1 >
+            <div class="event-row">
+                <div class="event-card" >
+                <img src ="/images/img44.png" class="event-logo">
+               <div>
+                <h3 class="event-name">Croma-tech</h3>
+                <p class="event-info">starts at:9:00 AM</p>
+                <p class="event-info">Location:Applied science Block</p>
+                <button  onclick="openPopup('croma')">view Rules</button>
+                </div> 
+                </div> 
+                <div class="event-card" >
+                <img src ="/images/chronometer.png">
+                <div>
+                <h3 class="event-name">TechKnockout</h3>
+                <p class="event-info">starts at:1:30 PM</p>
+                <p class="event-info">Location:Auditorium</p>
+                <button  onclick="openPopup('tech')">View Rules</button>
+                </div>
+                </div>
+        
+                <div class="event-card" >
+                <img src ="/images/hackathon.png" class="event-logo">
+               <div>
+                <h3 class="event-name">Hackathon</h3>
+                <p class="event-info">starts at:8:00 AM onwards</p>
+                <p class="event-info">Location: jitd Campus</p>
+                <button onclick="openPopup('hack')">view Rules</button>
+                </div>
+                </div> 
+                
+        
+                <div class="event-card" >
+                <img src ="/images/QR Hunt.png" class="event-logo">
+                <div>
+                <h3 class="event-name">QR Hunt</h3>
+                <p class="event-info">starts at:1:30 PM </p>
+                <p class="event-info">Location: Auditorium</p>
+                <button 
+                onclick="openPopup('qr')">view Rules</button>
+                </div>
+                </div> 
+
+
+                <div class="event-card">
+                <img src="/images/DevDetective.png" class="event-log">  
+                <div>
+                <h3 class="event-name">DevDetective</h3>
+                <p class="event-info">starts at 9:00 AM</p>
+                <p class="event-info">Location: FF117,FF116</p>
+                <button
+                onclick="openPopup('dev')">view Rules</button>
+                </div> 
+                </div>
+                
+
+                  <div class="event-card">
+                <img src="/images/structura.png" class="event-log">  
+            <div>
+                <h3 class="event-name">structura</h3>
+                <p class="event-info">starts at 1:30 PM </p>
+                <p class="event-info">Location: Idea Lab</p>
+                <button
+                onclick="openPopup('structura')">view Rules</button>
+                </div> 
+                </div>
+                
+
+                  <div class="event-card">
+                <img src="/images/techtrace.png" class="event-log">  
+                <div>
+                <h3 class="event-name">techtrace</h3>
+                <p class="event-info">starts at 9:00 AM</p>
+                <p class="event-info">Location: EEE Seminar Hall</p>
+                <button
+                onclick="openPopup('tech')">view Rules</button>
+                </div> 
+                </div>
+                
+
+                  <div class="event-card">
+                <img src="/images/technicalreels.png" class="event-log">  
+                <div>
+                <h3 class="event-name">technicalreels</h3>
+                <p class="event-info">starts at 1:30 P M</p>
+                <p class="event-info">Location: FF117,FF116</p>
+                <button
+                onclick="openPopup('dev')">view Rules</button>
+                </div> 
+                </div>
+                
+                
+                  <div class="event-card">
+                <img src="/images/ideathon.png" class="event-log">  
+                <div>
+                <h3 class="event-name">DevDetective</h3>
+                <p class="event-info">starts at 9:00 AM</p>
+                <p class="event-info">Location: SF211</p>
+                <button
+                onclick="openPopup('idea')">view Rules</button>
+                </div> 
+                </div>
+                
+
+                  <div class="event-card">
+                <img src="/images/ISONOVA.png" class="event-log">  
+                <div>
+                <h3 class="event-name">Isonova</h3>
+                <p class="event-info">starts at 1:30 PM</p>
+                <p class="event-info">Location: CAED Lab Fusion Block 1st Floor</p>
+                <button
+                onclick="openPopup('dev')">view Rules</button>
+                </div> 
+                </div>
+
+            </div>   
+                
+
+                
+
+        <script>
+
+            window.addEventListener('scroll',()=>{
+                const topSection = document.querySelector('.top-section');
+                const scrollY= window.scrollY;
+                topSection.style.transform = `translateY(${scrollY * 0.3}px)`;
+            });
+            function createBubbles(){
+            for(let i=0;i<20;i++){
+                const bubble = document.createElement('div');
+                bubble.classList.add('bubble');
+                const size= Math.random()*40+10;
+                bubble.style.width = size+"px";
+                bubble.style.height = size+"px";
+                bubble.style.left = Math.random()*100+"%";
+                bubble.style.animationDuration = Math.random()*10+10+"s";
+            bubble.style.animationDelay = Math.random()*5+"s";
+                bubble._baseY = 0;
+                document.body.appendChild(bubble);
+        }
+    }
+    createBubbles();
+        let mouseX = 0;
+        let mouseY = 0;
+        window.addEventListener('mousemove',(e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+        const bubbles = document.querySelectorAll('.bubble');
+        function updateBubbles(){
+            bubbles.forEach((bubble, index) =>{
+                const moveX = (mouseX - window.innerWidth/2) *0.005* (index+1);
+                const moveY = (mouseY - window.innerHeight/2) *0.005* (index+1);
+            });
+            requestAnimationFrame(updateBubbles);
+        } 
+        function scrollToDetails(){
+            document.getElementById("event-Details").scrollIntoView({
+                behavior:"smooth"
+            });      
+        }     
+    window.onclick = function(e){
+if(e.target == document.getElementById("popup")){
+closePopup();
+}
+}
+
+    
+        function openPopup(eventKey){
+            const event=eventRules[eventKey];
+            if(event){
+           document.getElementById("popupTitle").innerText = event.title;
+           document.getElementById("popupText").innerText = event.rules;
+            }
+           document.getElementById("popup").style.display = "flex";
+       }
+       function closePopup(){
+  document.getElementById("popup").style.display = "none";
+}
+const eventRules={
+    croma:{
+        title:"CromaTech",
+        rules: `
+        Rules and regulations
+        " 1. The event will be conducted individually. Team participation is not allowed.
+2. The theme of the competition is strictly based on Technical Concepts and Mandala art
+(Engineering, Technology, Innovation, Robotics, Artificial Intelligence, Circuits,
+Machines, etc.).
+3. Participants must bring their own materials.
+4. The use of printed materials, tracing sheets, stencils, or electronic gadgets is strictly
+prohibited.
+5. The time duration of the competition is 2 hours. No extra time will be provided."
+faculty coordinator:
+1.prof.Rekha C S(6360884397)
+2.prof.Poornima V G(733842166) 
+`},
+tech:{
+title:"techknockout",
+rules:`
+rules and regulations
+"1.Tech knockout is a technical word chain competition designed to enhance participants technical vocabulary, quick thinking, and subject knowledge. Participants must continue a chain 
+of technical terms, where each word begins with the last letter of the previous word.
+Example:Computer → Router → Robot → Transistor → Resistor
+2.The event have 2 rounds
+3.The team must have at most 3 members
+4.Judges' decision will be final and binding.
+5.Participants must maintain discipline throughout the event
+6.The detailed rules and regulations will be provided at the time of event."
+faculty coordinator:
+1.Prof.Rajshekhar Hammigi(8147957137)
+2.prof.Prof.Manjunath M Patil(98863 27001)
+`},
+hack:{
+    title:"hackathon",
+    rules:`
+    rules and regulation
+    1.An intensive 8-hour hackathon where teams build projects entirely from scratch. Open theme allowing participants to innovate freely across any technical domain.
+    2.Team Size:** 1-4 members finalized before deadline
+    3.Duration:** 8 hours
+    4.Theme:** Open
+    5.Requirements:** Valid college ID, own equipment
+    6.Restrictions:** No plagiarism, must acknowledge open-source tools, projects built entirely during event
+    7.Judging Criteria:** Innovation, technical quality, impact, feasibility, and presentation
+    Note:** No accommodation or meals provided
+    faculty coordinator:
+    1.prof.Manjula P(8553115284)
+    2.prof.Basavaraj patil GV(9844748432)
+`},
+qr:{
+    title:"QR hunt",
+    rules:`
+    rules and regulations
+    "1.	One mobile device per team.
+	2.	Solve each clue before moving to the next.
+	3.	Do not tamper with QR codes.
+	4.	No external assistance allowed.
+	5.	Fastest team to finish wins. 🏆"
+    faculty coordinator:
+    1.Prof Archana K N(6363497831)
+    2.Prof Pruthviraj M
+`},
+dev:{
+    title:"Devdetective",
+    rules:`
+    rules and regulations
+    "1. Each team (of 2 members) will be provided with a hardcopy of a C program containing errors.
+ 
+2. Participants must manually type the exact same code into the Dev C++ a software without modifying it initially.
+ 
+3. After entering the code, they must identify the errors, debug and correct them, finally compile and execute the program.
+ 
+
+4. The event will be conducted in multiple levels depending on the number of registrations.
+ 
+
+5. Each level will have a fixed time limit."
+faculty coordinator:
+1.Prof. AYESHA SIDDIQA KHANUM M(9986046274)
+2.Prof. KSHITIJA T(9482789865)
+`},
+structura:{
+    title:"structura",
+    rules:`
+    rules and regulations
+    " 1. Strict Material Limits: You may only use the officially provided newspaper and tape. No
+external materials, glues, or staples are allowed.
+2.The tower must be completely freestanding and cannot be taped or anchored to the floor, tables, or walls.
+3.The Height Imperative: The primary physical goal is verticality. Your tower must achieve
+the maximum possible height measured from its base to the highest stable point.
+4.Dynamic Mobility Test: A tall tower is useless if it falls over easily. Your completed structure must survive being physically lifted by the base and moved to a designated testing zone (e.g.,2 meters away) without buckling, snapping, or collapsing.
+5.Node Minimization (Efficiency): Structural elegance is key. You must build your tower using the fewest possible connecting ""nodes"" (the joints where paper members meet and are taped).
+6.Maximum 5 members per team."
+faculty cordinator:
+1.Mrs. Rajeshwari H M(9844304616)
+2.Mr. Dinesh Kumar(8147471503)
+`},
+trace:{
+    title:"techtrace",
+    rules:`
+    rules and regulations
+    1."Only one individual entry per person is allowed. Group participation is strictly prohibited.
+
+2.The sketch must strictly align with the given competition theme.
+
+3.Only A4 size drawing sheets will be provided. Participants must bring their own stationery and drawing tools.
+
+4.The artwork must be original and created using pencil only. Photographs, paintings, or digital art are not permitted.
+
+5.The total duration of the event is 60 minutes, and participants must complete their technical sketch or conceptual design within the allotted time.
+
+6.The artwork must not contain any offensive content, and the judges’ decision will be final."
+faculty coordinator:
+1.Prof. Bharath H M(97394060780)
+2.Prof. Raghu G M(9916339146)
+`},
+reels:{
+    title:"technical reels",
+    rules:`rules and regulations
+    "1. Participation is allowed individually or in teams (2 to 6 members).
+2. Participants must create an original technical reel based on Emerging Technologies.
+3. Reel duration must be between 2 to 5 minutes only.
+4. The reel must be submitted in MP4 format with minimum 720p quality.
+5. The technical reels must be created and edited inside the JGI campus premises. The background should clearly display the official JGI logo, and the creator’s face must appear in the reel.
+6. Registration fee is non-refundable the decision of the judges will be final and binding"
+faculty coordinator:
+1.Prof. Nivedita K(6361638579)
+2.Prof. Tejaswini K(9380986378) 
+`},
+idea:{
+    title:"ideathon",
+    rules:`
+    rules and regulations
+    "1. Participation is allowed individually or in teams (2 to 4 members). 
+2. Participants must present an original and innovative idea based on the Emerging technology, Participants must clearly explain the problem, solution, and its practical impact.
+3.Each team will get 5 - 7 minutes for presentation and 2–3 minutes for Q&A.
+4. Participants should report to the venue at least 15 minutes before the event. 
+5. Registration fee is non-refundable. 
+6. The decision of the judges will be final and binding.
+faculty coordinator:
+1.Prof. Sahana G S(8088465220)
+2.Prof. Thanu M R (8296911137)
+`},
+iso:{
+    rules:`
+    rules and regulations
+    "1. The competition is open to all undergraduate engineering students, participation is individual only, and a valid college ID card is mandatory for verification.
+
+2. The competition duration will be strictly limited as announced, and late submissions will not be accepted under any circumstances.
+
+3. Participants must convert the given 2D orthographic views into an accurate 3D isometric drawing using Solid Edge software only; use of any other CAD software is prohibited.
+
+4. Internet access, mobile phones, smart devices, external files, reference materials, communication with others, or any form of malpractice will lead to immediate disqualification.
+
+5. The drawing must follow correct scaling, 30° isometric angles, accurate projection standards, proper representation of features, and must be saved in the assigned file name format.
+
+6. Evaluation will be based on dimensional accuracy, projection correctness, completeness, drafting standards, time management, and the judges’ decision will be final and binding.
+faculty coordinator:
+1.Prof. Nagaraja K U(9480210840)
+2.Prof. Veeresh Kumar K S(9035211791)
+`},
+};
+</script>
+<div class="popup" id="popup">
+<div class="popup-content">
+
+<span class="close-butn" onclick="closePopup()">✖</span>
+
+<h2 id="popupTitle"></h2>
+<p id="popupText"></p>
+
+</div>
+</div>
+</body>
+</html>
