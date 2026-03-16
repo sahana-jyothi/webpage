@@ -1,0 +1,401 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+        content="width=device-width,initial-scale=1.0">
+        <title>EMERGE 2026</title>
+        <style>
+        body{
+        margin:0;
+        font-family:Segoe UI, sans-serif;
+        color:white;
+        overflow-x:hidden;
+        background:#0b0b0b;
+       }
+       body::before{
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width:100%;
+        height:100%;
+        background: 
+        radial-gradient(cirle at 20% 30%, rgba(255,255,255,0.06),transparent 40%),
+        radial-gradient(circle at 80% 70% rgba(255,255,255,0.05),transparent 40%),
+        radial-gradient(circle at 50% 50%,rgba(255,255,255,0.04),transparent 40%);
+        anmiation:somkeMove 15s infinite alternate ease-in-out;
+        z-index:-1;
+       }
+       @keyframes smokeMove{
+        0%{
+            transform:translate(0,0) scale(1);
+        }
+        50%{
+            transform:translate(-40px,20px) scale(1.1);
+        }
+        100%{
+            transform:translate(-40px,20px) scale(1.2);
+        }
+       }
+        .top-section{
+                display:flex;
+                align-items: center;
+                justify-content: flex-start;
+                padding: 20px 40px;
+                gap:15px;
+            }
+            .top-section img{
+                width: 120px;
+                height: auto;
+            }
+            .top-section a img{
+                cursor:pointer;
+            }
+            .top-section .top-text{
+                font-size: 28px;
+                font-weight: bold;
+            }
+            .logo-row{
+                display:flex;
+                gap:30px;
+                margin: 30px 0;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .logo-row img{
+                width:60px;
+                height:auto;
+                transition transform: 0.3s;
+            }
+            .hero-section{
+                position:relative;
+                width:70px;
+                max: width 700px;
+                height: 380px;
+                overflow:hidden;
+                margin-bottom: ;
+            }
+            .hero-image{
+                width:100%;
+                height:100%;
+                object-fit: cover;
+                border-radius: 12px;
+                display: block;
+            }
+            .card {
+               position: absolute;
+               width: 50%;
+               height: 50%;
+               background-color: #1f1f2f;
+               border: 2px solid #444;
+               transition: all is ease;
+               z-index: 10; 
+            }
+            .emerge-logo{
+                width:220px;
+                margin-bottom:20px;
+            }
+            .postcard{
+                position:relative;
+                width:320px;
+                margin:auto;
+            }
+            .poster{
+                width:100%;
+                border-radius:8px;
+            }
+            .edge{
+                position:absolute;
+                background:#0b0f19;
+                z-index:2;
+                transition:1s;
+            }
+            .top{
+                top:0;
+                left:0;
+                height:50%;
+                width:100%;
+                transform-origin:top;
+            }
+            .right{
+                top:0;
+                right:0;
+                width:50%;
+                height:100%;
+                transform-origin:right;
+            }
+            .bottom{
+                bottom:0;
+                left:0;
+                height:50%;
+                width:100%;
+                transform-origin:bottom;
+            }
+            .left{
+                top:0;
+                left:0;
+                width:50%;
+                height:100%;
+                transform-origin:left;
+            }
+            .story-container{
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                gap:40px;
+                flex-wrap:wrap;
+            }    
+            .character img{
+                width:120px;
+            }
+            .tabs button{
+                padding:10px 20px;
+                margin:10px;
+                border:none;
+                background:#222;
+                color:white;
+                cursor:pointer;
+                border-radius:20px;
+            }
+            .tabs button:hover{
+                background:#555;
+            }
+            .event-category{
+                display:none;
+            }
+            .event-logo{
+                display:none;
+                margin-top:20px;
+            }
+            .event-logo img{
+                width:120px;
+                cursor:pointer;
+            }
+            .event details{
+                display:none;
+                background:#111;
+                padding:20px;
+                margin-top:20px;
+                border-radius:10px;
+            }
+            .event-info{
+                display:flex;
+                justify-content:center;
+                gap:30px;
+                flex-wrap:wrap;
+            }
+            .info-card{
+                display:flex;
+                justify-content:center;
+                border-radius:10px;
+                width:150px;
+            }
+            .register-btn{
+                display:inline-block;
+                padding:15px 30px;
+                background:#4caf50;
+                color:white;
+                text-decoration:none;
+                border-radius:30px;
+                margin-top:20px;
+            }
+            .qr{
+                width:150px;
+                margin-top:20px;
+            }
+            .countdown{
+                font-size:28px;
+                margin-top:30px;
+            }
+            .card{
+                background:#111;
+                padding:20px;
+                bordr-radius:10px;
+                width:200px;
+                margin:auto;
+            }
+            footer{
+                background:#000;
+                padding:30px;
+                font-size:14px;
+            }
+            .reveal{
+                opacity:0;
+                transform:translateY(60px);
+                translation:0.8s;
+            }
+            .reveal.active{
+                opacity:1;
+                transform:translateY(0);
+            }
+            </style>
+            </head>
+            <body>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="events">Events</a></li>
+                        <li><a href="info">Info</a></li>
+                        <li><a href="register">Register</a></li>
+                        <li><a href="countdown">Countdown</a></li>
+                        </ul>
+                        </nav>
+                        <section class="hero" id="home">
+                            <img src="/images/2026.png">
+                            <h1>EMERGE 2026</h1>
+                            <p>Inter college Tech Fest</p>
+                            </section>
+                            <section class="reveal">
+                                <div class="postcard">
+                                    <div class="edge top" id="topEdge"></div>
+                                    <div class="edge right" id="rightEdge"></div>
+                                    <div class="edge bottom" id="bottomEdge"></div>
+                                    <div class="edge left" id="leftEdge"></div>
+                                    <img src="/images/final.png"> class="poster"
+                                    </div>
+                                    </section>
+                                    <section class="reveal" id="about">
+                                        <div class="story">
+                                            <img src="/images/mascot.png">
+                                            <div>
+                                                <h2>About EMERGE</h2>
+                                                </div>
+                                            </section>
+                                            <section class="events reveal" id="events">
+                                                <h2>Events</h2>
+                                                <div class="event" onclick="togglelogo('hackathon')"></div>
+                                                <div id="hackathon" class="logo">
+                                                    <img src="/images/hackathon.png" onclick="toggledetails('hackinfo)">
+                                                </div>
+                                                <div id="hackinfo" class="details">
+                                                    <h3>hackathon</h3>
+                                                </div>
+                                                <div class="event" onclick="togglelogo('ideathon')"> ideathon</div>
+                                                <div id="ideathon" class="logo">
+                                                    <img src="/images/ideathon.png" onclick="toggledetails('ideainfo')">
+                                                    </div>
+                                                    <div id="ideainfo" class="details">
+                                                        <h3>ideathon</h3>
+                                                        <p><b>Rules and Regulations:</b></p>
+                                                    <ul>
+                                                        <li>Open to all Engineering students with valid college ID.</li>
+                                                        <li>Individual or team (3–5 members) participation allowed.</li>
+                                                        <li>Original & innovative idea required.</li>
+                                                        <li>Presentation: 5–7 min, Q&A: 2–3 min.</li>
+                                                        <li>No plagiarism; copied ideas disqualified.</li>
+                                                        <li>Clearly explain problem, solution & impact.</li>
+                                                        <li>Maintain professional behavior & follow guidelines.</li>
+                                                        <li>Report 15 min before the event.</li>
+                                                        <li>Registration fee non-refundable.</li>
+                                                        <li>Judge's decision is final.</li>
+                                                    </ul>
+                                                    <h2>Faculty Coordinators</h2>
+                                                    <div class=""card>
+                                                        <h3>Ms.Shilpa D R(Phone-9036493295)</h3>
+                                                        <h3>Mrs.Sahana G S(Phone-8088465220)</h3>
+                                                        </div>
+                                                        <h2> Student Coordinators</h2>
+                                                        <div class="card">
+                                                            <h3>S V M D Saquib (phone-9108057573)</h3>
+                                                            <h3>Vijay R Hiremath(Phone-9980080956)</h3>
+                                                        </div>
+                                                            <div class="event" onclick="togglelogo('DevDetective')"> DevDetective</div>
+                                                <div id="DevDetective" class="logo">
+                                                    <img src="/images/DevDetective.png" onclick="toggledetails('devinfo')">
+                                                    </div>
+                                                    <div id="devinfo" class="details">
+                                                        <h3>DevDetective</h3>
+                                                        <p><b>Rules and Regulations:</b></p>
+                                                    <ul>
+                                                        <li>Each team will get a hardcopy of a C program with errors.</li>
+                                                        <li>Manually type the code into Dev C++ without modifying it initially.</li>
+                                                        <li>Identify errors, debug, correct, then compile & execute.</li>
+                                                        <li>Event conducted in multiple levels based on registrations.</li>
+                                                        <li>Each level has a fixed time limit.</li>
+                                                    </ul>
+                                                    <h2>Faculty coordinators</h2>
+                                                    <div class="card">
+                                                        <h3>Ayesha siddiqa khanum M (Phone-9986046274)</h3>
+                                                        <h3>Kshitija T (Phone-9482789865)</h3>
+                                                        </div>
+                                                        <h2>Student coordinators</h2>
+                                                        <div class="card">
+                                                            <h3>Venktesha M (Phone-7204793675)</h3>
+                                                            <h3>Veeresh Nagraj Kakanaki (8151803633)</h3>
+                                                        </div>
+                                                    <div class="event" onclick="togglelogo('Cromatech')">Cromatech</div>
+                                                    <div id="Cromatech" class="logo">
+                                                        <img src="/images/img44.png" onclick="toggodetails('cromainfo')">
+                                                    </div>
+                                                        <div id="cromainfo" class="details">
+                                                            <h3>Cromatech</h3>
+                                                            <p><b>Rules and Regulations:</b></p>
+                                                            <ul>
+                                                                <li>Event conducted individually; no team participation allowed.</li>
+                                                                <li>Theme strictly based on Technical Concepts & Mandala Art (Engineering,<br> Technology, Innovation, Robotics, AI, Circuits, Machines, etc.).</li>
+                                                                <li>Participants must bring their own drawing materials (sheet/chart, <br>pencils, colors, brushes, shades, sketch pens, etc.).</li>
+                                                                <li>Printed materials, tracing sheets, stencils, or electronic gadgets are<br> prohibited.</li>
+                                                                <li>Mobile phones and electronic devices are not allowed during the <br>competition.</li>
+                                                                <li>Time duration is 2 hours; no extra time provided.</li>
+                                                                <li>Maintain discipline and silence throughout the competition.</li>
+                                                                <li>Any malpractice, copying, or misconduct leads to immediate <br>disqualification.</li>
+                                                                <li>Judge's decision is final and binding.</li>
+                                                            </ul>
+                                                            <h2>Faculty Coordinator</h2>    
+                                                            <div class="card">
+                                                                <h3>prof.Poornima V G (Department of mathematics)</h3>
+                                                                <h3>prof.Rekha C S (Department of mathematics)</h3>
+                                                            </div>
+                                                            <h2>Student coordinators</h2>
+                                                            <div class="card">
+                                                                <h3>Ms.Amulya</h3>
+                                                                <h3>Mr.mithun Kumar K M </h3>
+                                                            </div>
+                                                            <div class="event" onclick="togglelogo('Techtrace')">Techtrace</div>
+                                                            <div id="Techtrace" class="logo">
+                                                                <img src="/images/techtrace.png" onclick="toggledetails('Techtrace')">
+                                                            </div>
+                                                            <div id="techinfo" class="details">
+                                                                <h3>Techtrace</h3>
+                                                                <p><b>Rules and Regulations:</b></p>
+                                                                <ul>
+                                                                    <li>Only one entry is allowed per person.</li>
+                                                                    <li>Sketch must align with the competition theme.</li>
+                                                                    <li>Group participation is not allowed.</li>
+                                                                    <li>Only A4 size drawing sheets will be provided.</li>
+                                                                    <li>Participants must bring their own stationery and tools.</li>
+                                                                    <li>Artwork must be original and created using pencil only.</li>
+                                                                    <li>Photographs, paintings, or digital art are not allowed.</li>
+                                                                    <li>Total duration of the event is 60 minutes.</li>
+                                                                    <li>Participants must prepare the sketch within the allotted time.</li>
+                                                                    <li>Art must not contain any offensive or disrespectful content.</li>
+                                                                    <li>Judge's decision will be final.</li>
+                                                                </ul>
+                                                                <h2>Faculty Coordinators</h2>
+                                                                <div class="card">
+                                                                    <h3>Mr.Bharath H M(Phone-9739460780)</h3>
+                                                                </div>
+                                                                <div class="event" onclick="togglelogo('PromptGenX')">"PromptGenX"</div>
+                                                                <div id="PromptGenX" class="logo">
+                                                                    <img src="" onclick="toggodetails('PromptGenX')">
+                                                                </div>
+                                                                <div id="promptinfo" class="details">
+                                                                    <h3>PromptGenX</h3>
+                                                                    <p><b>Rules and Regulations:</b></p>
+
+                                                                </div>    
+                                                                    
+
+
+                                
+
+
+
+                                                        
+
+                                                       
+                                                            
+
+                                            
+    
