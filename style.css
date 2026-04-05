@@ -5,6 +5,9 @@
 }
 
 body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
     font-family: 'Playfair Display', serif;
 }
 
@@ -749,12 +752,14 @@ button:hover {
 .venue-section,
 .rsvp-section {
     opacity: 0;
+    display: none;
     pointer-events: none;
     transition: opacity 1s ease;
 }
 .show-sections {
     opacity: 1 !important;
     pointer-events: all !important;
+    display: block;
 }
 @media (max-width: 768px) {
    /* your mobile code */
