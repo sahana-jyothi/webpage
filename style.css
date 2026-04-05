@@ -637,63 +637,80 @@ button:hover {
     color: #fff;
 }
 @media (max-width: 768px) {
+
     body {
         overflow-x: hidden;
     }
+
     .content {
         padding: 30px 20px;
         width: 90%;
     }
+
     .subtitle {
         font-size: 28px;
     }
+
     .names {
         font-size: 32px;
     }
+
     button {
         font-size: 14px;
         padding: 10px 20px;
     }
+
     .invitation-card {
         padding: 30px 20px;
         width: 90%;
     }
+
     .couple-names {
         font-size: 38px;
     }
+
     .wedding-date {
         font-size: 20px;
     }
+
     .date-line {
         width: 60px;
     }
+
     .couple-section {
         padding: 120px 20px 60px;
     }
+
     .couple-container {
         flex-direction: column;
         gap: 30px;
     }
+
     .circle {
         width: 150px;
         height: 150px;
     }
+
     .person-name {
         font-size: 22px;
     }
+
     .heart {
         font-size: 40px;
     }
+
     .story-text {
         font-size: 15px;
         padding: 0 10px;
         line-height: 1.7;
     }
+
     .events-grid {
         flex-direction: column;
         align-items: center;
         overflow-x: hidden;
     }
+
     .event-card {
         width: 90%;
         height: auto;
@@ -702,14 +719,17 @@ button:hover {
     .event-title {
         font-size: 36px;
     }
+
     .venue-container {
         flex-direction: column;
         text-align: center;
         gap: 40px;
     }
+
     .venue-title {
         font-size: 28px;
     }
+
     .venue-map iframe {
         height: 250px;
     }
@@ -717,14 +737,17 @@ button:hover {
         width: 90%;
         padding: 30px 20px;
     }
+
     .rsvp-container input {
         width: 100%;
         margin-bottom: 15px;
     }
+
     .countdown {
         flex-wrap: wrap;
         gap: 10px;
     }
+
     .countdown div {
         width: 70px;
         height: 70px;
