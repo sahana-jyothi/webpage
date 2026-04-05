@@ -257,6 +257,9 @@ button:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease;
 }
 .couple-container {
     display: flex;
@@ -337,7 +340,9 @@ button:hover {
     min-height: 100vh;
     padding: 100px 20px;
     background: linear-gradient(to bottom,  #5a0f1b, #8b1e2d);
-
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -438,6 +443,9 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease;
 }
 .venue-container{
     display: flex;
@@ -531,6 +539,9 @@ button:hover {
     justify-content: center;
     gap: 60px;
     padding: 80px 20px;
+    opacity: none;
+    pointer-events: none;
+    transition: opacity 1s ease;
 }
 .rsvp-card{
     width: 100%;
@@ -634,4 +645,119 @@ button:hover {
     font-size: 13px;
     margin-top: 6px;
     color: #fff;
+}
+@media (max-width: 768px){
+    body{
+        overflow-x: hidden;
+    }
+}
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+    .content {
+        padding: 30px 20px;
+        width: 90%;
+    }
+    .subtitle {
+        font-size: 28px;
+    }
+    .names {
+        font-size: 32px;
+    }
+    button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+    .invitation-card {
+        padding: 30px 20px;
+        width: 90%;
+    }
+    .couple-names {
+        font-size: 38px;
+    }
+    .wedding-date {
+        font-size: 20px;
+    }
+    .date-line {
+        width: 60px;
+    }
+    .couple-section {
+        padding: 120px 20px 60px;
+    }
+    .couple-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .circle {
+        width: 150px;
+        height: 150px;
+    }
+    .person-name {
+        font-size: 22px;
+    }
+    .heart {
+        font-size: 40px;
+    }
+    .story-text {
+        font-size: 15px;
+        padding: 0 10px;
+        line-height: 1.7;
+    }
+    .events-grid {
+        flex-direction: column;
+        align-items: center;
+        overflow-x: hidden;
+    }
+    .event-card {
+        width: 90%;
+        height: auto;
+    }
+
+    .event-title {
+        font-size: 36px;
+    }
+    .venue-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+    .venue-title {
+        font-size: 28px;
+    }
+    .venue-map iframe {
+        height: 250px;
+    }
+    .rsvp-container {
+        width: 90%;
+        padding: 30px 20px;
+    }
+    .rsvp-container input {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .countdown {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .countdown div {
+        width: 70px;
+        height: 70px;
+        font-size: 14px;
+    }
+}
+.couple-section,
+.events-section,
+.venue-section,
+.rsvp-section {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease;
+}
+.show-sections {
+    opacity: 1 !important;
+    pointer-events: all !important;
+}
+@media (max-width: 768px) {
+   /* your mobile code */
 }
