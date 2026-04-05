@@ -6,7 +6,7 @@
 
 body {
     min-height: 100vh;
-    overflow-x: hidden;
+    overflow-y: hidden;
     font-family: 'Playfair Display', serif;
 }
 
@@ -109,7 +109,6 @@ button:hover {
     transform: translateX(100%);
 }
 
-/* Fade out content */
 .open .content {
     opacity: 0;
 }
@@ -260,10 +259,10 @@ button:hover {
 }
 .couple-container {
     display: flex;
-    flex-direction: startflex;
     justify-content: center;
     align-items: center;
-    gap: 100px;
+    gap: 60px;
+    flex-wrap: wrap; 
 }
 .couple-row {
     display: flex;
@@ -306,7 +305,9 @@ button:hover {
 .story-text {
     width: 100%;             
     max-width: 650px;         
-    margin: 0 auto;           
+    margin: 0 auto;  
+    margin-top: 30px;
+    padding: 0 15px;         
     margin-bottom: 50px;
     text-align: center;
     font-size: 18px;
@@ -575,7 +576,7 @@ button:hover {
 }
 .rsvp-btn{
     width: 100%;
-    padding: 12x;
+    padding: 12px;
     border: none;
     margin-top: 10px;
     border-radius: 25px;
