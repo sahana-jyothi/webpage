@@ -115,12 +115,10 @@ button:hover {
     opacity: 0;
 }
 .page2 {
-    position: absolute;
     top: 0;
     left: 0;
     margin: 0;
     width: 100%;
-    min-height: 100vh;
     background: linear-gradient(to bottom, #fff8f0, #f5e6d3);
     display: flex;
     justify-content: center;
