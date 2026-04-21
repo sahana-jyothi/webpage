@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)http://127.0.0.1:5500/webpage/yash.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Happy Birthday 🎉</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #fbeee6, #f7d9c4);
+    text-align: center;
+    overflow-x: hidden;
+}
+
+#home {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#home h1 {
+    font-size: 60px;
+    color: #d46a6a;
+    animation: fadeIn 2s ease;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 25px;
+    background: #d46a6a;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #b94e4e;
+    transform: scale(1.05);
+}
+
+#surprise {
+    display: none;
+    padding: 20px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: 0.4s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+.message {
+    font-size: 20px;
+    color: #555;
+    margin-top: 20px;
+    animation: fadeIn 2s ease;
+}
+
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    top: 0;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+@keyframes fadeIn {
+    from {opacity:0; transform: translateY(-20px);}
+    to {opacity:1; transform: translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<div id="home" style="display: none;">
+    <h1>🎉 Happy Birthday 🎂</h1>
+    <p>Click below to open your surprise 💖</p>
+    <button onclick="openSurprise()">Open Surprise 🎁</button>
+</div>
+
+<div id="surprise" style="display: block;">
+    <h1>✨ Your Special Memories ✨</h1>
+
+    <div class="gallery">
+        <img src="./Happy Birthday 🎉_files/image.png">
+        <img src="./Happy Birthday 🎉_files/yash3.image.jpeg">
+        <img src="./Happy Birthday 🎉_files/yash.image.jpeg">
+        <img src="./Happy Birthday 🎉_files/yash2.image.jpeg">
+    </div>
+
+    <div class="message">
+        Happy Birthday my dear son!! 🎂💖 <br><br>
+        Wishing you endless happiness, love, and success 🌈✨ <br>
+        You are truly special, you are a blessing 🎁 <br>
+        May all your dreams come true ✨
+    </div>
+</div>
+
+<!-- AUDIO -->
+<audio id="music" loop="">
+    <source src="./Nagutha-Nagutha.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function openSurprise() {
+    document.getElementById("home").style.display = "none";
+    document.getElementById("surprise").style.display = "block";
+
+    // Play music
+    let music = document.getElementById("music");
+    music.play().catch(() => {
+        console.log("Autoplay blocked, user interaction needed.");
+    });
+
+    for (let i = 0; i < 60; i++) {
+        let confetti = document.createElement("div");
+        confetti.classList.add("confetti");
+        confetti.style.left = Math.random() * 100 + "vw";
+        confetti.style.animationDuration = (Math.random() * 3 + 2) + "s";
+        confetti.style.background = ["#ff4d4d", "#ffd11a", "#66ff66", "#66ccff"][Math.floor(Math.random()*4)];
+        document.body.appendChild(confetti);
+    }
+}
+</script>
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+<div class="confetti" style="left: 46.6212vw; animation-duration: 3.53773s; background: rgb(255, 209, 26);"></div><div class="confetti" style="left: 50.0869vw; animation-duration: 3.388s; background: rgb(102, 204, 255);"></div><div class="confetti" style="left: 11.3374vw; animation-duration: 2.1439s; background: rgb(255, 77, 77);"></div><div class="confetti" style="left: 84.3427vw; animation-duration: 2.38706s; background: rgb(255, 77, 77);"></div><div class="confetti" style="left: 26.873vw; animation-duration: 2.22529s; background: rgb(255, 209, 26);"></div><div class="confetti" style="left: 97.1568vw; animation-duration: 2.9799s; background: rgb(102, 204, 255);"></div><div class="confetti" style="left: 24.7459vw; animation-duration: 3.15191s; background: rgb(102, 204, 255);"></div><div class="confetti" style="left: 32.5959vw; animation-duration: 3.75896s; background: rgb(255, 77, 77);"></div><div class="confetti" style="left: 38.5384vw; animation-duration: 4.75404s; background: rgb(255, 77, 77);"></div><div class="confetti" style="left: 0.425018vw; animation-duration: 4.78631s; background: rgb(102, 255, 102);"></div><div class="confetti" style="left: 69.6847vw; animation-duration: 2.38786s; background: rgb(102, 255, 102);"></div><div class="confetti" style="left: 10.8084vw; animation-duration: 3.92538s; background: rgb(255, 209, 26);"></div><div class="confetti" style="left: 32.3366vw; animation-duration: 2.73908s; background: rgb(255, 77, 77);"></div><div class="confetti" style="left: 75.6123vw; animation-duration: 2.19812s; background: rgb(102, 255, 102);"></div><div class="confetti" style="left: 36.7884vw; animation-duration: 2.93205s; background: rgb(102, 204, 255);"></div><div class="confetti" style="left: 20.7401vw; animation-duration: 3.84696s; background: rgb(102, 204, 255);"></div><div class="confetti" style="left: 90.832vw; animation-duration: 2.84999s; background: rgb(255, 209, 26);"></div><div class="confetti" style="left: 29.6397vw; animation-duration: 4.13422s; background: rgb(255, 77, 77);"></div><div class="confetti" style="left: 75.6442vw; animation-duration: 2.70982s; background: rgb(255, 77, 77);"></div><div class="confetti" style="left: 26.1578vw; animation-duration: 3.53726s; background: rgb(255, 77, 77);"></div><div class="confetti" style="left: 10.8691vw; animation-duration: 4.95144s; background: rgb(102, 255, 102);"></div><div class="confetti" style="left: 59.9955vw; animation-duration: 3.5912s; background: rgb(102, 204, 255);"></div><div class="confetti" style="left: 63.2591vw; animation-duration: 3.69855s; background: rgb(102, 255, 102);"></div><div class="confetti" style="left: 57.0415vw; animation-duration: 2.57948s; background: rgb(255, 209, 26);"></div><div class="confetti" style="left: 7.15996vw; animation-duration: 4.33838s; background: rgb(255, 77, 77);"></div><div class="confetti" style="left: 46.6602vw; animation-duration: 2.77901s; background: rgb(255, 77, 77);"></div><div class="confetti" style="left: 14.3517vw; animation-duration: 2.83467s; background: rgb(255, 209, 26);"></div><div class="confetti" style="left: 52.4124vw; animation-duration: 3.34734s; background: rgb(255, 209, 26);"></div><div class="confetti" style="left: 1.64628vw; animation-duration: 4.99157s; background: rgb(102, 204, 255);"></div><div class="confetti" style="left: 56.1654vw; animation-duration: 2.07296s; background: rgb(255, 209, 26);"></div><div class="confetti" style="left: 95.0038vw; animation-duration: 2.21046s; background: rgb(102, 255, 102);"></div><div class="confetti" style="left: 8.58502vw; animation-duration: 3.85725s; background: rgb(102, 255, 102);"></div><div class="confetti" style="left: 26.9213vw; animation-duration: 4.91246s; background: rgb(255, 209, 26);"></div><div class="confetti" style="left: 90.8855vw; animation-duration: 4.06049s; background: rgb(255, 209, 26);"></div><div class="confetti" style="left: 99.7316vw; animation-duration: 3.55721s; background: rgb(102, 204, 255);"></div><div class="confetti" style="left: 5.28143vw; animation-duration: 2.28923s; background: rgb(255, 209, 26);"></div><div class="confetti" style="left: 83.9997vw; animation-duration: 4.38441s; background: rgb(102, 204, 255);"></div><div class="confetti" style="left: 52.8673vw; animation-duration: 3.90926s; background: rgb(102, 204, 255);"></div><div class="confetti" style="left: 42.4766vw; animation-duration: 3.27611s; background: rgb(102, 255, 102);"></div><div class="confetti" style="left: 96.1129vw; animation-duration: 4.88684s; background: rgb(255, 209, 26);"></div><div class="confetti" style="left: 10.2323vw; animation-duration: 4.7744s; background: rgb(255, 209, 26);"></div><div class="confetti" style="left: 66.6256vw; animation-duration: 2.07251s; background: rgb(102, 204, 255);"></div><div class="confetti" style="left: 68.734vw; animation-duration: 2.86087s; background: rgb(255, 77, 77);"></div><div class="confetti" style="left: 72.1991vw; animation-duration: 4.20506s; background: rgb(102, 255, 102);"></div><div class="confetti" style="left: 19.9038vw; animation-duration: 2.22279s; background: rgb(255, 209, 26);"></div><div class="confetti" style="left: 64.0557vw; animation-duration: 3.32131s; background: rgb(102, 204, 255);"></div><div class="confetti" style="left: 77.4213vw; animation-duration: 4.80581s; background: rgb(102, 204, 255);"></div><div class="confetti" style="left: 6.48524vw; animation-duration: 2.6285s; background: rgb(255, 77, 77);"></div><div class="confetti" style="left: 79.013vw; animation-duration: 2.03894s; background: rgb(102, 255, 102);"></div><div class="confetti" style="left: 32.3714vw; animation-duration: 2.95176s; background: rgb(255, 209, 26);"></div><div class="confetti" style="left: 73.0777vw; animation-duration: 2.09015s; background: rgb(255, 77, 77);"></div><div class="confetti" style="left: 62.5783vw; animation-duration: 3.03963s; background: rgb(102, 255, 102);"></div><div class="confetti" style="left: 48.0534vw; animation-duration: 4.67627s; background: rgb(102, 255, 102);"></div><div class="confetti" style="left: 50.2814vw; animation-duration: 3.26387s; background: rgb(255, 209, 26);"></div><div class="confetti" style="left: 24.2796vw; animation-duration: 2.59971s; background: rgb(255, 209, 26);"></div><div class="confetti" style="left: 4.8363vw; animation-duration: 4.6906s; background: rgb(255, 209, 26);"></div><div class="confetti" style="left: 44.9597vw; animation-duration: 2.79021s; background: rgb(102, 204, 255);"></div><div class="confetti" style="left: 22.7349vw; animation-duration: 4.17844s; background: rgb(102, 204, 255);"></div><div class="confetti" style="left: 32.5431vw; animation-duration: 2.78889s; background: rgb(255, 209, 26);"></div><div class="confetti" style="left: 27.4209vw; animation-duration: 3.19259s; background: rgb(255, 209, 26);"></div></body></html>
